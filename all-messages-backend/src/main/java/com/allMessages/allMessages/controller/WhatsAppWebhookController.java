@@ -27,7 +27,7 @@ public class WhatsAppWebhookController {
             messageDTO.setStatus("RECEIVED");
             messageDTO.setTimestamp(System.currentTimeMillis());
 
-            kafkaTemplate.send("whatsapp-incoming", messageDTO.getClientId() , messageDTO);
+            kafkaTemplate.send("whatsapp-incoming", messageDTO.getCustomerId() , messageDTO);
 
             return ResponseEntity.ok().build();
         }catch (Exception e){

@@ -5,17 +5,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MessageDTO {
+public class MessageDTO implements Serializable {
 
     private String id;
-    private String clientId;
-    private String clientName;
-    private String content;
+    private String customerId;    // clienteId -> customerId
+    private String customerName;  // nomeCliente -> customerName
+    private String content;       // conteudo -> content
     private String type;
-    private String sector;
+    private String department;    // setor -> department
     private String status;
     private Long timestamp;
 
@@ -28,20 +30,20 @@ public class MessageDTO {
         this.id = id;
     }
 
-    public String getClientId() {
-        return clientId;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
-    public String getClientName() {
-        return clientName;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
     public String getContent() {
@@ -60,12 +62,12 @@ public class MessageDTO {
         this.type = type;
     }
 
-    public String getSector() {
-        return sector;
+    public String getDepartment() {
+        return department;
     }
 
-    public void setSector(String sector) {
-        this.sector = sector;
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     public String getStatus() {
