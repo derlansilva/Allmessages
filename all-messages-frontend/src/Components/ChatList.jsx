@@ -27,6 +27,54 @@ export default function ChatList({ onSelectChat, selectedChatId }) {
             hora: 'Ontem',
             foto: 'https://randomuser.me/api/portraits/men/32.jpg',
             unread: true
+        }, {
+            id: 4,
+            cliente: 'João Silva',
+            ultimaMsg: 'Quero falar com o Suporte, por favor!',
+            hora: '14:32',
+            foto: null, // Simulando sem foto
+            unread: true
+        },
+        {
+            id: 5,
+            cliente: 'Maria Santos',
+            ultimaMsg: 'Obrigado pelo atendimento rápido, vocês são ótimos!', // Msg Longa
+            hora: '12:10',
+            foto: 'https://randomuser.me/api/portraits/women/44.jpg',
+            unread: false
+        },
+        {
+            id: 6,
+            cliente: 'Carlos Ferreira',
+            ultimaMsg: 'Meu boleto ainda não chegou no e-mail.',
+            hora: 'Ontem',
+            foto: 'https://randomuser.me/api/portraits/men/32.jpg',
+            unread: true
+        },
+
+         {
+            id: 7,
+            cliente: 'João Silva',
+            ultimaMsg: 'Quero falar com o Suporte, por favor!',
+            hora: '14:32',
+            foto: null, // Simulando sem foto
+            unread: true
+        },
+        {
+            id: 8,
+            cliente: 'Maria Santos',
+            ultimaMsg: 'Obrigado pelo atendimento rápido, vocês são ótimos!', // Msg Longa
+            hora: '12:10',
+            foto: 'https://randomuser.me/api/portraits/women/44.jpg',
+            unread: false
+        },
+        {
+            id: 9,
+            cliente: 'Carlos Ferreira',
+            ultimaMsg: 'Meu boleto ainda não chegou no e-mail.',
+            hora: 'Ontem',
+            foto: 'https://randomuser.me/api/portraits/men/32.jpg',
+            unread: true
         },
         
     ];
@@ -55,12 +103,12 @@ export default function ChatList({ onSelectChat, selectedChatId }) {
 
                         className={`
                         flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all
-              ${selectedChatId === chat.id ? 'bg-blue-50/60' : 'hover:bg-gray-50'}
-                        ${selectedChatId === chat.id
-                                ? 'bg-blue-100 ring-1 ring-blue-200'
-                                : 'hover:bg-blue-100/80'}
-                        `}
-                    >
+                            ${selectedChatId === chat.id ? 'bg-blue-50/60' : 'hover:bg-gray-50'}
+                                ${selectedChatId === chat.id
+                                        ? 'bg-blue-100 ring-1 ring-blue-200'
+                                        : 'hover:bg-blue-100/80'}
+                                `}
+                            >
 
                         {/* Foto ou Inicial */}
                         {chat.foto ? (

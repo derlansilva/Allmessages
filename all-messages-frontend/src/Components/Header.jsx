@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <header className="h-16 border-b flex items-center px-4 justify-between bg-white z-10">
             <div className="flex items-center gap-4">
-                <span className="text-2xl font-bold text-blue-600"> AllMessages</span>
+                <span className="text-2xl font-bold text-blue-600"> All-Messages</span>
             </div>
 
             <div className="flex-1 max-w-2xl px-8">
