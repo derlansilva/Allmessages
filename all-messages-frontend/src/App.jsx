@@ -10,6 +10,7 @@ import Sidebar from './Components/Sidebar'
 import ChatList from './Components/ChatList'
 import ChatWindow from './Components/ChatWindow'
 import Login from './pages/Login'
+import apiServices from './service/apiServices'
 
 
 function App() {
@@ -24,6 +25,21 @@ function App() {
       setUser(JSON.parse(userSave));
     }
   } , [])
+
+
+   useEffect(() => {
+        const fetchMyChats = async () => {
+            try {
+                const data = await apiServices .getConversation(user.id);
+                console.log("minhas conversas " , data)
+            } catch (error) {
+                console.error("Erro ao listar conversas:", error);
+            }
+        }
+
+          fetchMyChats;
+    })
+
 
   const handleLoginSuccess = (userData) => {
     setUser(userData);
@@ -43,16 +59,17 @@ function App() {
   return (
     <div className="h-screen w-screen flex flex-col overflow-hidden font-sans text-gray-900">
 
-      <Header user={user} onLogout={handleLogout}/>
+      <Header user={user} onLogout={handleLogout} onSelectChat={setSelectedChat}/>
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />
 
         <ChatList 
           onSelectChat={ setSelectedChat } 
           selectedChatId={selectedChat?.id} 
+          userId={user.id}
         />
 
-        <ChatWindow chat={selectedChat}/>
+        <ChatWindow chat={selectedChat} currentUser={user}/>
       </div>
     </div>
   )
